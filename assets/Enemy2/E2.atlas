@@ -1,0 +1,61 @@
+E2.png
+size: 48, 122
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+E2.1
+  rotate: false
+  xy: 0, 0
+  size: 22, 34
+  orig: 22, 34
+  offset: 0, 0
+  index: -1
+E2.2
+  rotate: false
+  xy: 22, 0
+  size: 23, 30
+  orig: 23, 30
+  offset: 0, 0
+  index: -1
+E2.3
+  rotate: false
+  xy: 0, 34
+  size: 23, 31
+  orig: 23, 31
+  offset: 0, 0
+  index: -1
+E2.4
+  rotate: false
+  xy: 23, 34
+  size: 22, 31
+  orig: 22, 31
+  offset: 0, 0
+  index: -1
+E2.5
+  rotate: false
+  xy: 0, 65
+  size: 26, 28
+  orig: 26, 28
+  offset: 0, 0
+  index: -1
+E2.6
+  rotate: false
+  xy: 26, 65
+  size: 22, 28
+  orig: 22, 28
+  offset: 0, 0
+  index: -1
+E2.7
+  rotate: false
+  xy: 0, 93
+  size: 22, 29
+  orig: 22, 29
+  offset: 0, 0
+  index: -1
+E2.8
+  rotate: false
+  xy: 22, 93
+  size: 23, 28
+  orig: 23, 28
+  offset: 0, 0
+  index: -1

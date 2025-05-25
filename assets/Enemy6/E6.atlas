@@ -1,0 +1,61 @@
+E6.png
+size: 15, 149
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+E6.1
+  rotate: false
+  xy: 0, 0
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+E6.2
+  rotate: false
+  xy: 0, 19
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+E6.3
+  rotate: false
+  xy: 0, 38
+  size: 15, 18
+  orig: 15, 18
+  offset: 0, 0
+  index: -1
+E6.4
+  rotate: false
+  xy: 0, 56
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+E6.5
+  rotate: false
+  xy: 0, 75
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+E6.6
+  rotate: false
+  xy: 0, 94
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1
+E6.7
+  rotate: false
+  xy: 0, 113
+  size: 15, 17
+  orig: 15, 17
+  offset: 0, 0
+  index: -1
+E6.8
+  rotate: false
+  xy: 0, 130
+  size: 15, 19
+  orig: 15, 19
+  offset: 0, 0
+  index: -1

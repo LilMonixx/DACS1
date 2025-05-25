@@ -1,55 +1,66 @@
 package com.mygdx.game.UI;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.scenes.scene2d.Stage;
+import com.badlogic.gdx.scenes.scene2d.ui.Skin;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.utils.viewport.ScreenViewport;
 import com.mygdx.game.Main.GameScreen;
 import com.mygdx.game.Main.MainGame;
 
-
-public class MainScreen implements Screen {
+public class PauseMenu implements Screen {
     private MainGame game;
+    private GameScreen gameScreen;
     private Stage stage;
     private Skin skin;
     private Texture background;
     private SpriteBatch batch;
 
-    public MainScreen(MainGame game) {
+    public PauseMenu(MainGame game, GameScreen gameScreen) {
         this.game = game;
+        this.gameScreen = gameScreen;
+
         stage = new Stage(new ScreenViewport());
         Gdx.input.setInputProcessor(stage);
         batch = new SpriteBatch();
-        background = new Texture(Gdx.files.internal("Background.jpg")); // Đặt ảnh vào thư mục assets
+        background = new Texture(Gdx.files.internal("background.jpg")); // sử dụng lại hình nền
 
-        // Load skin (bạn cần skin json + atlas hoặc dùng default skin của LibGDX)
         skin = new Skin(Gdx.files.internal("skin/uiskin.json"));
 
         Table table = new Table();
         table.setFillParent(true);
         stage.addActor(table);
 
-        TextButton playButton = new TextButton("Enter Dungeon", skin,"DefaultButton");
-        TextButton loadButton = new TextButton("Load", skin,"DefaultButton");
-        TextButton exitButton = new TextButton("Exit Dungeon",skin,"DefaultButton");
+        TextButton saveButton = new TextButton("Save", skin, "DefaultButton");
+        TextButton returnButton = new TextButton("Return", skin, "DefaultButton");
+        TextButton mainMenuButton = new TextButton("Main Menu", skin, "DefaultButton");
+        TextButton exitButton = new TextButton("Exit Dungeon", skin, "DefaultButton");
 
-        playButton.addListener(event -> {
+        saveButton.addListener(event -> {
             if (event.toString().equals("touchDown")) {
-                game.setScreen(new GameScreen(game));  // <-- chuyển sang GameScreen
+                System.out.println("Save clicked (chưa thực hiện tính năng)");
                 return true;
             }
             return false;
         });
 
-        loadButton.addListener(event -> {
-            if(event.toString().equals("touchDown")){
-                System.out.println("clicked");
+        returnButton.addListener(event -> {
+            if (event.toString().equals("touchDown")) {
+                game.setScreen(gameScreen); // quay lại màn hình chơi
+                return true;
+            }
+            return false;
+        });
+
+        mainMenuButton.addListener(event -> {
+            if (event.toString().equals("touchDown")) {
+                game.setScreen(new MainScreen(game)); // trở về Main Menu
                 return true;
             }
             return false;
@@ -57,16 +68,16 @@ public class MainScreen implements Screen {
 
         exitButton.addListener(event -> {
             if (event.toString().equals("touchDown")) {
-                Gdx.app.exit();
+                Gdx.app.exit(); // hoặc logic tương tự Exit Dungeon
                 return true;
             }
             return false;
         });
 
-        table.add(playButton).width(200).height(50).pad(15).row();
-        table.add(loadButton).width(200).height(50).pad(15).row();
+        table.add(saveButton).width(200).height(50).pad(15).row();
+        table.add(returnButton).width(200).height(50).pad(15).row();
+        table.add(mainMenuButton).width(200).height(50).pad(15).row();
         table.add(exitButton).width(200).height(50).pad(15).row();
-
     }
 
     @Override
@@ -77,16 +88,13 @@ public class MainScreen implements Screen {
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        // Vẽ background trước
         batch.begin();
         batch.draw(background, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         batch.end();
 
-        // Vẽ stage (nút)
         stage.act(delta);
         stage.draw();
     }
-
 
     @Override
     public void resize(int width, int height) {
@@ -106,8 +114,7 @@ public class MainScreen implements Screen {
     public void dispose() {
         stage.dispose();
         skin.dispose();
-        background.dispose(); // Giải phóng ảnh
-        batch.dispose();      // Giải phóng batch
+        background.dispose();
+        batch.dispose();
     }
-
 }

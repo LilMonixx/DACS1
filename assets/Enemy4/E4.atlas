@@ -1,0 +1,61 @@
+E4.png
+size: 10, 106
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+E4.1
+  rotate: false
+  xy: 0, 0
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+E4.2
+  rotate: false
+  xy: 0, 14
+  size: 10, 12
+  orig: 10, 12
+  offset: 0, 0
+  index: -1
+E4.3
+  rotate: false
+  xy: 0, 26
+  size: 10, 11
+  orig: 10, 11
+  offset: 0, 0
+  index: -1
+E4.4
+  rotate: false
+  xy: 0, 37
+  size: 10, 13
+  orig: 10, 13
+  offset: 0, 0
+  index: -1
+E4.5
+  rotate: false
+  xy: 0, 50
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
+E4.6
+  rotate: false
+  xy: 0, 64
+  size: 10, 13
+  orig: 10, 13
+  offset: 0, 0
+  index: -1
+E4.7
+  rotate: false
+  xy: 0, 77
+  size: 10, 15
+  orig: 10, 15
+  offset: 0, 0
+  index: -1
+E4.8
+  rotate: false
+  xy: 0, 92
+  size: 10, 14
+  orig: 10, 14
+  offset: 0, 0
+  index: -1
